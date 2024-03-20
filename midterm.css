@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 2em;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Dropdown */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content {
+  left: 0;
+}
+
+/* Container Flex */
+
+.container-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Body */
+
+#hero {
+  background-image: url(./bulletin.jpg);
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 0;
+}
+
+#hero h2 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+#hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #ff9900;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #cc7700;
+}
+
+#featured-destinations {
+  padding: 50px 0;
+}
+
+.destination {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.destination img {
+  width: 100%;
+  max-width: 1000px;
+  height: 700px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.destination h3 {
+  margin-top: 20px;
+}
+
+/* Pricing */
+
+.price {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px 10px;
+  display: none;
+  z-index: 1;
+}
+
+.destination:hover .price {
+  display: block;
+}
+/* Footer */
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Media queries */
+
+@media only screen and (min-width: 768px) {
+  .destination {
+    width: calc(25% - 20px);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .destination {
+    width: calc(50% - 20px);
+  }
+}
