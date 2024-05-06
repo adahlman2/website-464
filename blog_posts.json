@@ -1,0 +1,42 @@
+[
+    {
+        "title": "Post Title 1",
+        "content": "Summary of the blog post content goes here. It can be a brief description or introduction to the topic."
+    },
+    {
+        "title": "Post Title 2",
+        "content": "Summary of the blog post content goes here. It can be a brief description or introduction to the topic."
+    },
+    {
+        "title": "Post Title 3",
+        "content": "Summary of the blog post content goes here. It can be a brief description or introduction to the topic."
+    },
+    {
+        "title": "Post Title 4",
+        "content": "Hello"
+    },
+    {
+        "title": "asdf",
+        "content": "asdf"
+    },
+    {
+        "title": "asdf",
+        "content": "asdf"
+    },
+    {
+        "title": "Puerto Rico was Lit",
+        "content": "I had a lot of fun traveling to Puerto Rico with the help of Globetrotting Guru!"
+    },
+    {
+        "title": "Check out my Travel Channel",
+        "content": "Come check out my travel channel on Youtube! I just got done exploring the Himalayas."
+    },
+    {
+        "title": "Do Not Go to the Cabin on the Hill",
+        "content": "Please avoid the cabin on the hill around Boca Raton, Florida. I hear screaming and opera music plays very loudly on rainy nights."
+    },
+    {
+        "title": "Colorado ",
+        "content": "I loved the serenity of the mountains. I am an avid nature enjoyer, and Colorado was the place to go!"
+    }
+]

@@ -1,0 +1,95 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Globetrotting Guru Guide</h1>
+      <nav>
+        <ul>
+          <li><a href="final.html">Home</a></li>
+          <li class="dropdown">
+            <a href="final.html" class="dropbtn">Destinations</a>
+            <div class="dropdown-content">
+              <a href="Americas.html">Americas</a>
+              <a href="Eurasia.html">Eurasia</a>
+            </div>
+          </li>
+          <li><a href="blog.php">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="guide.html">Guide</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <section id="about" class="container">
+    <h2>About Us</h2>
+    <p>At Globetrotting Guru Inc., we're more than just a travel company: we're your passport to unparalleled adventures, cultural immersion, and transformative experiences around the globe.</p>
+    <p>Established with a vision to redefine travel, we curate bespoke journeys that transcend conventional tourism, allowing you to delve deep into the heart and soul of each destination. Our commitment to excellence, personalized service, and attention to detail ensures that every aspect of your journey is meticulously crafted to exceed your expectations.</p>
+    <p>Led by a team of seasoned travelers and industry experts, our mission is to inspire, educate, and empower you to explore the world with curiosity, respect, and an open mind. Whether you're seeking a soul-stirring trek through rugged landscapes, a gastronomic escapade sampling world cuisines, or a cultural immersion delving into ancient traditions, we have the expertise and passion to turn your dreams into reality.</p>
+    <p>As advocates for sustainable travel practices, we strive to minimize our environmental footprint and support local communities in preserving their natural and cultural heritage. Through responsible tourism initiatives, we aim to create meaningful connections between travelers and destinations while fostering mutual respect and understanding.</p>
+    <p>Join us on a journey of discovery, where every destination is a classroom, every encounter is an opportunity for growth, and every moment is a cherished memory. Welcome to Globetrotting Guru Inc. where the world is your playground, and the possibilities are endless...</p><br> 
+    
+    <h3>Adjust your Settings</h3>
+    <div id="dark-mode-toggle">
+      <input type="checkbox" id="dark-mode-checkbox">
+      <label for="dark-mode-checkbox">Toggle Dark Mode</label>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <h3>Here are some of our fav travelers' memories:</h3>
+      <div class="gallery-container">
+        <img src="fav1.jpg">
+        <img src="fav2.jpg">
+        <img src="fav3.jpg">
+        <img src="fav4.jpg">
+        <img src="fav5.jpg">
+        <img src="fav6.jpg">
+        <img src="fav7.jpg">
+        <img src="fav8.jpg">
+        <img src="fav9.jpg">
+        <img src="fav10.jpg">
+        <img src="fav11.jpg">
+        <img src="fav12.jpg">
+        <img src="fav13.jpg">
+        <img src="fav14.jpg">
+        <img src="fav15.jpg">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>Copyright Globetrotting Guru &copy; 2024 </p>
+    </div>
+  </footer>
+</body>
+</html>
+
+<style type="text/css">
+  @import url(./final.css);
+</style>
+
+<script src="./final.js" type="text/javascript"></script>
+
+<!-- Gallery -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const images = document.querySelectorAll('.gallery-container img');
+    let currentImageIndex = 0;
+
+    function showNextImage() {
+      images[currentImageIndex].classList.remove('active');
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      images[currentImageIndex].classList.add('active');
+    }
+
+    images[currentImageIndex].classList.add('active');
+
+    setInterval(showNextImage, 3000);
+  });
+</script>
