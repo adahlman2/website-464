@@ -1,0 +1,100 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Globetrotting Guru Guide</h1>
+      <nav>
+        <ul>
+          <li><a href="final.html">Home</a></li>
+          <li class="dropdown">
+            <a href="final.html" class="dropbtn">Destinations</a>
+            <div class="dropdown-content">
+              <a href="Americas.html">Americas</a>
+              <a href="Eurasia.html">Eurasia</a>
+            </div>
+          </li>
+          <li><a href="blog.php">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="guide.html">Guide</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <section id="tools" class="container">
+    <div id="price-display">$<span id="price-value">5000</span></div>
+    <input type="range" id="price-slider" min="0" max="10000" value="5000" step="1">
+    <div id="options-container">
+      <div class="option" data-min="0" data-max="2500">Canada, Brazil, Utah, Turkey, Greece ($0-$2500)</div>
+      <div class="option" data-min="2501" data-max="5000">Indonesia, Cambodia, Canada, Brazil, Utah, Turkey, Greece ($2501-$5000)</div>
+      <div class="option" data-min="5001" data-max="7500">Spain, Indonesia, Cambodia, Canada, Brazil, Utah, Turkey, Greece ($5001-$7500)</div>
+      <div class="option" data-min="7501" data-max="10000">Italy, Spain, Indonesia, Cambodia, Canada, Brazil, Utah, Turkey, Greece ($7501-$10000)</div>
+    </div>
+
+    <div class="converter">
+      <h3>Currency Exchange</h3>
+      <input type="number" id="amount" placeholder="Enter amount">
+      <select id="from"></select>
+      <select id="to"></select>
+      <button onclick="convert()">Convert</button>
+      <p id="result"></p>
+    </div>
+
+    <div class="drive-time-container">
+      <h3>Drive Time Calculator</h3>
+      <p>Enter your current latitude and longitude:</p>
+      <input type="text" id="currentLat" placeholder="Current Latitude">
+      <input type="text" id="currentLon" placeholder="Current Longitude">
+      <p>Enter your destination latitude and longitude:</p>
+      <input type="text" id="destLat" placeholder="Destination Latitude">
+      <input type="text" id="destLon" placeholder="Destination Longitude">
+      <button onclick="calculateDriveTime()">Calculate Drive Time</button>
+      <p id="driveTime"></p>
+    </div>
+  </section>
+  
+
+  <footer>
+    <div class="container">
+      <p>Copyright Globetrotting Guru &copy; 2024 </p>
+    </div>
+  </footer>
+</body>
+</html>
+
+<style type="text/css">
+  @import url(./final.css);
+</style>
+
+<script src="./final.js" type="text/javascript"></script>
+
+<!-- Price Slider -->
+<script>
+  const priceSlider = document.getElementById('price-slider');
+  const priceDisplay = document.getElementById('price-value');
+  const optionsContainer = document.getElementById('options-container');
+
+  priceSlider.addEventListener('input', updateOptions);
+
+  function updateOptions() {
+    const selectedPrice = parseInt(priceSlider.value);
+    priceDisplay.textContent = selectedPrice;
+    const options = document.querySelectorAll('.option');
+
+    options.forEach(option => {
+        const minPrice = parseInt(option.dataset.min);
+        const maxPrice = parseInt(option.dataset.max);
+        
+        if (selectedPrice >= minPrice && selectedPrice <= maxPrice) {
+            option.style.display = 'block';
+        } else {
+            option.style.display = 'none';
+        }
+    });
+
+    optionsContainer.style.display = 'block';
+  }
+</script>

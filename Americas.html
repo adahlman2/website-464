@@ -1,0 +1,116 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Globetrotting Guru Guide</h1>
+      <nav>
+        <ul>
+          <li><a href="final.html">Home</a></li>
+          <li class="dropdown">
+            <a href="final.html" class="dropbtn">Destinations</a>
+            <div class="dropdown-content">
+              <a href="Americas.html">Americas</a>
+              <a href="Eurasia.html">Eurasia</a>
+            </div>
+          </li>
+          <li><a href="blog.php">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="guide.html">Guide</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <section id="catalog">
+
+    <div class="container">
+
+        <div class="container listing">
+          <h2>Utah</h2>
+          <img src="utah.jpg" alt="Experience">
+          <p>The stars shine for you in the deserts of Utah.</p>
+          <p>Discover a land where ancient rock formations stretch skyward, where vibrant cities pulse with energy, and where adventure awaits around every corner. From the iconic red rock landscapes of Arches and Bryce Canyon National Parks to the serene shores of the Great Salt Lake, Utah offers a tapestry of experiences that will leave you spellbound.</p>
+          <p>Explore the rugged canyons of Zion National Park, where towering sandstone cliffs cast shadows over winding trails and cascading waterfalls. Delve into the rich history of Utah's native cultures as you uncover ancient rock art and archaeological treasures hidden amidst the desert landscape.</p>
+          <p>Whether you're seeking thrills, relaxation, or a bit of both, Utah has something for everyone. So pack your bags, hit the road, and let Utah's breathtaking landscapes and boundless adventures inspire your next great escape!</p>
+          <p class="desirability">Desirability: <span id="utahDesirability"></span></p>
+          <p class="price-tag">From $1500</p>
+          <div class="map" id="utahMap" style="width: 600px; height: 400px;"></div>
+        </div>
+
+        <div class="container listing">
+          <h2>Brazil</h2>
+          <img src="brazil.jpg" alt="Experience">
+          <p>Experience the stunning beauty and culture of the Federative Republic of Brazil.</p>
+          <p>Begin your journey in Rio de Janeiro, where the iconic Christ the Redeemer statue stands sentinel over the bustling city below. Immerse yourself in the lively atmosphere of Copacabana Beach, where the sound of samba fills the air and the spirit of Carnival lives on year-round.</p>
+          <p>Explore the historic streets of Salvador, a city steeped in Afro-Brazilian culture and colonial charm. Lose yourself in the rhythm of the streets as you dance to the beat of drum troupes and sample the flavors of Bahian cuisine.</p>
+          <p>From the vibrant streets of Rio to the untamed wilderness of the Amazon, Brazil offers a tapestry of experiences that will captivate your senses and leave you longing for more. So pack your bags, embrace the spirit of adventure, and let Brazil's beauty and diversity inspire your next great escape!</p>
+          <p class="desirability">Desirability: <span id="brazilDesirability"></span></p>
+          <p class="price-tag">From $2500</p>
+          <div class="map" id="brazilMap" style="width: 600px; height: 400px;"></div>
+        </div>
+
+        <div class="container listing">
+          <h2>Canada</h2>
+          <img src="canada.jpg" alt="Experience">
+          <p>Embark on an enchanting journey through the majestic landscapes of Canada.</p>
+          <p>Begin your exploration in the bustling metropolis of Toronto, where soaring skyscrapers stand in stark contrast to the tranquil shores of Lake Ontario. Discover the city's eclectic neighborhoods, world-class museums, and thriving culinary scene, which reflects the rich tapestry of cultures that call Canada home.</p>
+          <p>Venture westward to the stunning natural wonders of Banff and Jasper National Parks, where rugged mountain peaks, emerald lakes, and pristine wilderness await. Hike through alpine meadows, kayak on crystal-clear waters, or simply soak in the awe-inspiring scenery of the Canadian Rockies.</p>
+          <p>From the cosmopolitan cities of the east to the untamed wilderness of the west, Canada offers a wealth of experiences that will capture your imagination and leave you longing for more. So pack your bags, embrace the spirit of adventure, and let Canada's beauty and hospitality inspire your next great journey!</p>
+          <p class="desirability">Desirability: <span id="canadaDesirability"></span></p>
+          <p class="price-tag">From $2500</p>
+          <div class="map" id="canadaMap" style="width: 600px; height: 400px;"></div>
+        </div>
+
+    </div>
+  
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>Copyright Globetrotting Guru &copy; 2024 </p>
+    </div>
+  </footer>
+</body>
+</html>
+
+<style type="text/css">
+  @import url(./final.css);
+</style>
+
+<script src="./final.js" type="text/javascript"></script>
+
+<!-- Leaflet Library -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+  var utahMap = L.map('utahMap').setView([37.2982, -113.0263], 10);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(utahMap);
+
+  var brazilMap = L.map('brazilMap').setView([-22.9068, -43.1729], 10);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(brazilMap);
+
+  var canadaMap = L.map('canadaMap').setView([45.5017, -73.5673], 10);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(canadaMap);
+
+  getDesirability('Utah').then(desirability => {
+      document.getElementById('utahDesirability').textContent = desirability;
+    });
+
+  getDesirability('Brazil').then(desirability => {
+    document.getElementById('brazilDesirability').textContent = desirability;
+  });
+
+  getDesirability('Canada').then(desirability => {
+    document.getElementById('canadaDesirability').textContent = desirability;
+  });
+</script>
